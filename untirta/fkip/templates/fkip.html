@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 style="margin: 15px;text-align:center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman'margin-top: 60px; margin-left: 50px; margin-right: 50px">Fakultas Keguruan dan Ilmu Pendidikan
+
+    <br><br>
+    <img src="https://untirta.ac.id/wp-content/uploads/2022/05/IMG_6982-scaled.jpg" style="position:relative; margin: auto; width: 500px">
+  </h2>
+    <p style="margin-left: 50px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify"> Fakultas Keguruan dan Ilmu Pendidikan (FKIP) juga termasuk dari tiga fakultas tertua di Untirta. Pertama kali berdiri tahun 1981 dengan nama Sekolah Tinggi Keguruan dan Ilmu Pendidikan (STKIP). Sama halnya dengan fakultas tertua lainnya, fakultas ini berubah nama di tahun 1984 seiring dengan pembentukan Untirta. Fun fact tentang fakultas ini ialah FKIP merupakan fakultas dengan program studi terbanyak di Untirta.
+   
+   <br>
+   <br>
+   Program Studi Fakultas Keguruan dan Ilmu Pendidikan
+   <ol type="1" style="margin-left: 75px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify">
+     <li>Pendidikan Guru Sekolah Dasar</li><li>
+       Pendidikan Matematika</li><li>
+       Pendidikan IPA</li><li>
+       Pendidikan Khusus</li><li>
+       Pendidikan Seni dan Pertunjukan</li><li>
+       Pendidikan Guru Pendidikan Anak Usia Dini</li><li>
+       Pendidikan Sejarah</li><li>
+       Pendidikan Kimia</li><li>
+       Pendidikan Fisika</li><li>
+       Pendidikan Sosiologi</li><li>
+       Pendidikan Vokasional Teknik Mesin</li><li>
+       Pendidikan Non Formal</li><li>
+       Bimbingan dan Konseling</li><li>
+       Pendidikan Pancasila dan Kewarganegaraan</li><li>
+       Pendidikan Vokasional Teknik Elektro</li><li>
+       Pendidikan Biologi</li>
+       <li>Pendidikan Bahasa Indonesia </li>
+       <li>Pendidikan Bahasa Inggris </li>
+
+       </ol>
+ </p>
+ <h2>Daftar Nama Dosen FKIP</h2>
+ <table class="table table-success table-striped">
+     <tr>
+         <th>NIP</th>
+         <th>Nama</th>
+         <th>Tanggal Lahir</th>
+         <th>Foto</th>
+         <th>Email</th>
+         <th>Fakultas</th>
+         <th>Prodi</th>
+         <th>Alamat</th>
+     </tr>
+     {% for dosen in dataDosen %}
+     <tr>
+         <td>{{ dosen.nip }}</td>
+         <td>{{ dosen.nama }}</td>
+         <td>{{ dosen.tanggal_lahir }}</td>
+         <td>{{ dosen.foto }}</td>
+         <td>{{ dosen.email }}</td>
+         <td>{{ dosen.fakultas }}</td>
+         <td>{{ dosen.prodi }}</td>
+         <td>{{ dosen.alamat }}</td>
+     </tr>
+     {% endfor %}
+ </table>
+ <br>
+ <h2>Daftar Nama Staf FKIP</h2>
+ <table class="table table-success table-striped">
+     <tr>
+         <th>NIP</th>
+         <th>Nama</th>
+         <th>Tanggal Lahir</th>
+         <th>Foto</th>
+         <th>Email</th>
+         <th>Unit</th>
+         <th>Alamat</th>
+     </tr>
+     {% for staf in dataStaf %}
+     <tr>
+         <td>{{ staf.nip }}</td>
+         <td>{{ staf.nama }}</td>
+         <td>{{ staf.tanggal_lahir }}</td>
+         <td>{{ staf.foto }}</td>
+         <td>{{ staf.email }}</td>
+         <td>{{ staf.unit }}</td>
+         <td>{{ staf.alamat }}</td>
+     </tr>
+     {% endfor %}
+ </table>
+ <br>
+ <h2>Daftar Nama Mahasiswa FKIP</h2>
+ <table class="table table-success table-striped">
+     <tr>
+         <th>NIM</th>
+         <th>Nama</th>
+         <th>Tanggal Lahir</th>
+         <th>Foto</th>
+         <th>Email</th>
+         <th>Fakultas</th>
+         <th>Prodi</th>
+         <th>Alamat</th>
+     </tr>
+     {% for mahasiswa in dataMahasiswa %}
+     <tr>
+         <td>{{ mahasiswa.nim }}</td>
+         <td>{{ mahasiswa.nama }}</td>
+         <td>{{ mahasiswa.tanggal_lahir }}</td>
+         <td>{{ mahasiswa.foto }}</td>
+         <td>{{ mahasiswa.email }}</td>
+         <td>{{ mahasiswa.fakultas }}</td>
+         <td>{{ mahasiswa.prodi }}</td>
+         <td>{{ mahasiswa.alamat }}</td>
+     </tr>
+     {% endfor %}
+ </table>
+{% endblock %}

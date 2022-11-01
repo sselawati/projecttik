@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 style="margin: 15px;text-align:center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman'margin-top: 60px; margin-left: 50px; margin-right: 50px" id="">Fakultas Hukum
+
+    <br><br>
+    <img src="https://bidikutama.com/wp-content/uploads/2019/03/IMG_20190327_134941.jpg" style="position:relative; margin: auto; width: 500px">
+  </h2>
+    <p style="margin-left: 50px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify"> Fakultas Hukum Untirta pertama kali berdiri pada 1 Oktober 1981 dengan nama Sekolah Tinggi Ilmu Hukum (STIH) di bawah naungan Yayasan Pendidikan Tirtayasa Banten (YPTB). Pada tahun 1984, STIH menjadi Fakultas Hukum Untirta yang juga merupakan salah satu fakultas pertama pondasi berdirinya Untirta. Dapat dikatakan, Fakultas Hukum merupakan salah satu dari tiga fakultas tertua di Untirta.
+   
+   <br>
+   <br>
+   Program Studi Fakultas Hukum
+   <ol type="1" style="margin-left: 75px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify">
+     <li>Ilmu Hukum</li>
+   </ol>
+ </p>
+ <h2>Daftar Nama Dosen FH</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIP</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for dosen in dataDosen %}
+        <tr>
+            <td>{{ dosen.nip }}</td>
+            <td>{{ dosen.nama }}</td>
+            <td>{{ dosen.tanggal_lahir }}</td>
+            <td>{{ dosen.foto }}</td>
+            <td>{{ dosen.email }}</td>
+            <td>{{ dosen.fakultas }}</td>
+            <td>{{ dosen.prodi }}</td>
+            <td>{{ dosen.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Staf FH</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIP</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Unit</th>
+            <th>Alamat</th>
+        </tr>
+        {% for staf in dataStaf %}
+        <tr>
+            <td>{{ staf.nip }}</td>
+            <td>{{ staf.nama }}</td>
+            <td>{{ staf.tanggal_lahir }}</td>
+            <td>{{ staf.foto }}</td>
+            <td>{{ staf.email }}</td>
+            <td>{{ staf.unit }}</td>
+            <td>{{ staf.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Mahasiswa FH</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for mahasiswa in dataMahasiswa %}
+        <tr>
+            <td>{{ mahasiswa.nim }}</td>
+            <td>{{ mahasiswa.nama }}</td>
+            <td>{{ mahasiswa.tanggal_lahir }}</td>
+            <td>{{ mahasiswa.foto }}</td>
+            <td>{{ mahasiswa.email }}</td>
+            <td>{{ mahasiswa.fakultas }}</td>
+            <td>{{ mahasiswa.prodi }}</td>
+            <td>{{ mahasiswa.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

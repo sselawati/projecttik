@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 style="margin: 15px;text-align:center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman'margin-top: 60px; margin-left: 50px; margin-right: 50px" id="">Fakultas Kedokteran
+
+    <br><br>
+    <img src="https://bidikutama.com/wp-content/uploads/2019/02/FAKULTAS-KEDOKTERAN-UNTIRTA.jpeg" style="position:relative; margin: auto; width: 500px">
+  </h2>
+<p style="margin-left: 50px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify">FK Untirta baru diresmikan pada tahun 2019 melalui SK Menteri Riset Teknologi dan Pendidikan Tinggi Republik Indonesia Nomor 283/KPT/I/2019. Fakultas ini menyediakan 5 jurusan dengan mengusung strategi untuk mendukung program kesehatan di provinsi Banten. FK Untirta juga mempertimbangkan posisi strategis Banten dan memperhatikan banyaknya kawasan industri yang tersebar di Banten. Oleh sebab itu, Kedokteran Kerja (Okupasi) dijadikan keunggulan dari jurusan Kedokteran fakultas ini.
+    
+    <br>
+    <br>
+  Program Studi Fakultas Kedokteran
+    <ol type="1" style="margin-left: 75px; margin-right: 50px; margin-top:5px; margin-bottom:8px; font-family:Arial, Helvetica, sans-serif; text-align:justify">
+      <li>Ilmu Keolahragaan</li>
+      <li>Ilmu Gizi</li>
+      <li>Ilmu Kedokteran</li>
+      <li>Keperawatan</li>
+    </ol>
+  </p>
+  <h2>Daftar Nama Dosen FK</h2>
+  <table class="table table-success table-striped">
+      <tr>
+          <th>NIP</th>
+          <th>Nama</th>
+          <th>Tanggal Lahir</th>
+          <th>Foto</th>
+          <th>Email</th>
+          <th>Fakultas</th>
+          <th>Prodi</th>
+          <th>Alamat</th>
+      </tr>
+      {% for dosen in dataDosen %}
+      <tr>
+          <td>{{ dosen.nip }}</td>
+          <td>{{ dosen.nama }}</td>
+          <td>{{ dosen.tanggal_lahir }}</td>
+          <td>{{ dosen.foto }}</td>
+          <td>{{ dosen.email }}</td>
+          <td>{{ dosen.fakultas }}</td>
+          <td>{{ dosen.prodi }}</td>
+          <td>{{ dosen.alamat }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  <br>
+  <h2>Daftar Nama Staf FK</h2>
+  <table class="table table-success table-striped">
+      <tr>
+          <th>NIP</th>
+          <th>Nama</th>
+          <th>Tanggal Lahir</th>
+          <th>Foto</th>
+          <th>Email</th>
+          <th>Unit</th>
+          <th>Alamat</th>
+      </tr>
+      {% for staf in dataStaf %}
+      <tr>
+          <td>{{ staf.nip }}</td>
+          <td>{{ staf.nama }}</td>
+          <td>{{ staf.tanggal_lahir }}</td>
+          <td>{{ staf.foto }}</td>
+          <td>{{ staf.email }}</td>
+          <td>{{ staf.unit }}</td>
+          <td>{{ staf.alamat }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+  <br>
+  <h2>Daftar Nama Mahasiswa FK</h2>
+  <table class="table table-success table-striped">
+      <tr>
+          <th>NIM</th>
+          <th>Nama</th>
+          <th>Tanggal Lahir</th>
+          <th>Foto</th>
+          <th>Email</th>
+          <th>Fakultas</th>
+          <th>Prodi</th>
+          <th>Alamat</th>
+      </tr>
+      {% for mahasiswa in dataMahasiswa %}
+      <tr>
+          <td>{{ mahasiswa.nim }}</td>
+          <td>{{ mahasiswa.nama }}</td>
+          <td>{{ mahasiswa.tanggal_lahir }}</td>
+          <td>{{ mahasiswa.foto }}</td>
+          <td>{{ mahasiswa.email }}</td>
+          <td>{{ mahasiswa.fakultas }}</td>
+          <td>{{ mahasiswa.prodi }}</td>
+          <td>{{ mahasiswa.alamat }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+
+{% endblock %}
